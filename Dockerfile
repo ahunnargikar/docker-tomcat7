@@ -6,7 +6,8 @@ RUN echo deb http://archive.ubuntu.com/ubuntu precise universe > /etc/apt/source
 RUN apt-get update
 
 #Install packages
-RUN apt-get -y install wget curl git-core nano default-jdk maven
+RUN apt-get -y -f install --no-install-recommends openjdk-7-jdk 
+RUN apt-get -y install wget curl git-core nano maven
 
 #Install Tomcat
 RUN apt-get install -y tomcat7 tomcat7-docs tomcat7-admin
